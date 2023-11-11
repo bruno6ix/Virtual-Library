@@ -14,7 +14,7 @@ body {
 .search {
   display: flex;
   align-items: center;
-  margin: 0 auto; /* Centrar el campo de búsqueda */
+  margin: 0 auto;
 }
 
 .search input {

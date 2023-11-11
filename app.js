@@ -5,9 +5,27 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 
+const session = require('express-session');
+
 const indexRouter = require('./routes/index');
 
 const app = express();
+
+app.use(session({
+  secret: 'cadena_secreta',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
+app.use((req, res, next) => {
+    
+  res.locals.isLoggedIn = req.session.userId ? true : false;
+  res.locals.userId = req.session.userId;
+  
+  next();
+
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

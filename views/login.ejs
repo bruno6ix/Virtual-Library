@@ -11,22 +11,26 @@
 </head>
 <body>
 
-    <%- include ("./partials/navbar") %>
+  <%- include ("./partials/navbar") %>
 
-    <main>
-    <div class="formulario-login">
-        <h2>Iniciar Sesión</h2>
-        <form action="#" method="post">
-          <label for="usuario">Usuario:</label>
-          <input type="text" id="usuario" name="usuario" required>
-      
-          <label for="contrasena">Contraseña:</label>
-          <input type="password" id="contrasena" name="contrasena" required>
-      
-          <button type="submit">Iniciar Sesión</button>
-        </form>
-      </div>
-    </main>
+  <main>
+  <div class="formulario-login">
+      <h2>Iniciar Sesión</h2>
+      <form action="/login" method="post">
+        
+        <label for="userUsername">Usuario:</label>
+        <input type="text" id="userUsername" name="userUsername" required>
+    
+        <label for="userPassword">Contraseña:</label>
+        <input type="password" id="userPassword" name="userPassword" required>
+    
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+    </div>
+  </main>
+
+  <%- include ("./partials/footer") %>
 
 </body>
+
 </html>

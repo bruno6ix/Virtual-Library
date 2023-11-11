@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/bookDetail.css">
+    <title>Document</title>
+</head>
+<body>
+        <%- include ("./partials/navbar") %>
+
+        <main>
+            <div class="card-container">
+                <% if (results.length === 0) { %>
+                    <p>No se encontraron resultados.</p>
+                <% } else { %>
+                    <% results.forEach(book => { %>
+                        <div class="card">
+                            <img src="<%= book.image %>" alt="<%= book.title %>">
+                            <h3><%= book.title %></h3>
+                            <p><%= book.description %></p>
+                            <a href="<%= book.link %>" download>Descargar PDF</a>
+                            <a href="/book-detail/<%= book.id %>">Ir</a>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
+        </main>
+
+        <%- include ("./partials/footer") %>
+
+
+</body>
+</html>

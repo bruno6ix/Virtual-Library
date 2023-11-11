@@ -2,6 +2,8 @@ const db = require('../database/models')
 const path = require('path')
 const multer = require('multer');
 
+const { Op } = require('sequelize');
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname, '../public/images/pdf')); 
@@ -24,6 +26,37 @@ const mainController = {
             console.log(err)
         }
     },
+
+    search: async (req, res) => {
+        const searchTerm = req.query.Buscar;
+
+        try {
+            const results = await db.Book.findAll({
+                where: {
+                    [db.Sequelize.Op.or]: [
+                        {
+                            title: {
+                                [db.Sequelize.Op.like]: `%${searchTerm}%`,
+                            },
+                        },
+                        {
+                            description: {
+                                [db.Sequelize.Op.like]: `%${searchTerm}%`,
+                            },
+                        },
+                    ],
+                },
+            });
+
+            res.render('bookSearch.ejs', { results, term: searchTerm });
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Hubo un error al procesar la solicitud' });
+        }
+    },
+
+
+
 
     formCreate: (req, res) => {
         res.render('bookFormCreate.ejs')
@@ -60,8 +93,12 @@ const mainController = {
         res.render('bookFormEdit.ejs')
     },
 
-    user: (req, res) => {
+    formLogin: (req, res) => {
         res.render('login.ejs')
+    },
+
+    login: (req, res) =>{
+        res.redirect('/')
     },
 
     bookDetail: async (req, res) => {
