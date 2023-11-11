@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .mi-formulario {
+    background-color: #fff;
+    padding: 10px;
+    margin: 100px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mi-label {
+    margin-top: 6px;
+  }
+  
+  .mi-input,
+  .mi-textarea,
+  .mi-btn {
+    margin-top: 6px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .mi-input[type="file"] {
+    margin-top: 8px;
+  }
+  
+  .mi-btn {
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mi-btn#eliminar {
+    background-color: #e74c3c;
+  }
+  
+  .mi-btn:hover {
+    background-color: #2980b9;
+  }
+  

@@ -1,0 +1,56 @@
+main {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .formulario-login {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .formulario-login h2 {
+    color: #3498db;
+  }
+  
+  .formulario-login form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formulario-login label {
+    margin-top: 10px;
+  }
+  
+  .formulario-login input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .formulario-login button {
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formulario-login button:hover {
+    background-color: #2980b9;
+  }
+  
