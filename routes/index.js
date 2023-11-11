@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const mainController = require('../controller/mainController')
+const { mainController, upload } = require('../controller/mainController')
 
 router.get('/', mainController.index)
 router.get('/book-create', mainController.formCreate)
+
+router.post('/book-create', upload.single('archivo'), mainController.bookPush)
+
 router.get('/book-edit', mainController.formEdit)
 
-router.get('/user', mainController.user)
+router.get('/login', mainController.user)
 
-router.get('/book-detail', mainController.bookDetail)
+router.get('/book-detail/:id', mainController.bookDetail)
 
 module.exports = router;

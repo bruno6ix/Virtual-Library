@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/bookDetail.css">
-    <title>Document</title>
+    <title>Detalle de Libro - TEC 5</title>
 </head>
 <body>
 
@@ -14,9 +14,9 @@
     <main>
         <div class="detalle-libro">
             <img src="/images/libro.jpg" alt="Portada del libro">
-            <h2>El Gran Libro</h2>
-            <p class="descripcion">Una historia fascinante que te atrapará desde la primera página hasta la última. Descubre un mundo lleno de aventuras y misterios.</p>
-            <a href="#" class="descargar">Descargar</a>
+            <h2><%= libroDetalle.title %></h2>
+            <p class="descripcion"><%= libroDetalle.description %></p>
+            <a href="<%= libroDetalle.link %>" download>Descargar PDF</a>
           </div>
     </main>
     
