@@ -10,7 +10,8 @@ router.get('/', mainController.index)
 router.get('/book-create', authSession, mainController.formCreate)
 router.post('/book-create', authSession, upload.single('archivo'), mainController.bookPush)
 
-router.get('/book-edit', authSession, mainController.formEdit)
+router.get('/book-edit/:id', authSession, mainController.formEdit)
+router.post('/book-edit/:id', authSession, upload.single('archivo'), mainController.bookEdit)
 
 router.get('/login', authRedirectSession, mainController.formLogin)
 router.post('/login', authRedirectSession, validacionesInicioSesion, resultadoInicioSesion, mainController.login);

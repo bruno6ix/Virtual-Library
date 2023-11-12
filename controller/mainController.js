@@ -87,11 +87,60 @@ const mainController = {
             res.status(500).json({ error: 'Hubo un error al procesar la solicitud' });
         }
     },
-    
 
-    formEdit: (req, res) => {
-        res.render('bookFormEdit.ejs')
+    formEdit: async(req, res) => {
+
+        const { id } = req.params;
+
+        try {
+            const result = await db.Book.findOne({ where:{id} })
+            if(result){
+
+            return res.render('bookFormEdit.ejs', {result})
+            }else{
+                  throw new Error("No se ha encontrado el registro")
+            }
+        } catch(err){
+            console.log(err)
+        }
+
     },
+
+    bookEdit: async(req, res) => {
+        const {id} = req.params
+
+        const { nombre, descripcion, genero } = req.body;
+
+        try {
+            if (!req.file) {
+                return res.status(400).json({ error: 'Debes adjuntar un archivo PDF' });
+            }
+    
+            const archivoPath = `/images/pdf/${req.file.filename}`;
+
+            const newAs = await db.Book.update({
+
+                title: nombre,
+                description: descripcion,
+                link: archivoPath,
+                genre: genero,
+                image: '/images/libro.jpg'
+
+            },
+            {
+                where:{id}
+               })
+
+               console.log(newAs)
+
+            
+
+            return res.redirect('/')
+
+    }catch(err){
+        console.log(err)
+    }
+},
 
     formLogin: (req, res) => {
         res.render('login.ejs')
