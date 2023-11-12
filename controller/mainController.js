@@ -118,7 +118,7 @@ const mainController = {
     
             const archivoPath = `/images/pdf/${req.file.filename}`;
 
-            const newAs = await db.Book.update({
+            await db.Book.update({
 
                 title: nombre,
                 description: descripcion,
@@ -130,10 +130,6 @@ const mainController = {
             {
                 where:{id}
                })
-
-               console.log(newAs)
-
-            
 
             return res.redirect('/')
 
