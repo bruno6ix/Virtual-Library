@@ -7,6 +7,7 @@ const sequelize = new Sequelize({
   dialect: "mysql",
   port: process.env.DB_PORT,
   host: process.env.DB_HOST,
+  use_env_variable: '?',
 });
 
 module.exports = {
@@ -18,5 +19,6 @@ module.exports = {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: "mysql",
+    use_env_variable: '?',
   },
 };
