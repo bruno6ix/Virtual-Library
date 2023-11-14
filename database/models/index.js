@@ -8,9 +8,6 @@ const basename = path.basename(__filename);
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
-const Sequelize = require('sequelize');
-const config = require('./config');
-
 const env = process.env.NODE_ENV || 'development';
 const dbConfig = config[env];
 
