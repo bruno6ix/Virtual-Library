@@ -5,7 +5,10 @@ module.exports = {
     database: process.env.DATABASE,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+      connectTimeout: 60000,
+    },
   },
   test: {
     username: process.env.DB_USERNAME,
@@ -13,7 +16,10 @@ module.exports = {
     database: process.env.DATABASE,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+      connectTimeout: 60000,
+    },
   },
   production: {
     username: process.env.DB_USERNAME,
@@ -21,6 +27,9 @@ module.exports = {
     database: process.env.DATABASE,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: 'mysql'
+    dialect: 'mysql',
+    dialectOptions: {
+      connectTimeout: 60000,
+    },
   }
 };
