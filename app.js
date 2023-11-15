@@ -10,6 +10,7 @@ const methodOverride = require('method-override')
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
+const { sequelize } = require('./database/models');
 
 const app = express();
 
@@ -59,7 +60,14 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
+
   res.status(err.status || 500);
+
 });
+
+sequelize.sync()
+app.listen(3000 || process.env.PORT, () => {
+  console.log('Server on')
+})
 
 module.exports = app;
