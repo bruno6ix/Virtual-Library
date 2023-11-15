@@ -8,10 +8,9 @@
         </div>
         <div class="login">
             <% if (isLoggedIn) { %>
-                <!-- Muestra el icono de rueda dentada si el usuario está autenticado -->
-                <a href="/book-create"><i class="fas fa-cog"></i></a>
+                <a href="/">Inicio</a>
+                <a href="/book-create">Nuevo Libro</a>
             <% } else { %>
-                <!-- Muestra el enlace "Iniciar sesión" si el usuario no está autenticado -->
                 <a href="/login">Iniciar sesión</a>
             <% } %>
         </div>

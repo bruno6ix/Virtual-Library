@@ -6,7 +6,7 @@ const { Op } = require('sequelize');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '../public/images/pdf')); 
+      cb(null, path.join(__dirname, '../public//pdf')); 
     },
     filename: function (req, file, cb) {
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
@@ -71,7 +71,7 @@ const mainController = {
                 return res.status(400).json({ error: 'Debes adjuntar un archivo PDF' });
             }
     
-            const archivoPath = `/images/pdf/${req.file.filename}`;
+            const archivoPath = `/pdf/${req.file.filename}`;
     
             await db.Book.create({
                 title: nombre,
@@ -112,11 +112,10 @@ const mainController = {
         const { nombre, descripcion, genero } = req.body;
 
         try {
-            if (!req.file) {
-                return res.status(400).json({ error: 'Debes adjuntar un archivo PDF' });
-            }
-    
-            const archivoPath = `/images/pdf/${req.file.filename}`;
+
+            const pathMain = req.file
+            
+            const archivoPath = `/images/pdf/${pathMain.filename}`;
 
             await db.Book.update({
 
@@ -158,6 +157,18 @@ const mainController = {
             console.log(err)
         }
 
+    },
+
+    bookDelete: async (req, res) => {
+        try{
+            await db.Book.destroy(
+                {where: {id: req.params.id}}
+                )
+
+            return res.redirect('/')
+        } catch(err){
+            console.log(err)
+        }
     }
 }
 

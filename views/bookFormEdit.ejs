@@ -21,10 +21,10 @@
         <textarea id="descripcion" name="descripcion" class="mi-textarea" required><%= result.title %></textarea>
     
         <label for="archivo" class="mi-label">Subir archivo PDF:</label>
-        <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input" required>
+        <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input">
 
         <label for="genero" class="mi-label">Género:</label>
-      <select id="genero" name="genero" class="mi-input" required>
+      <select id="genero" name="genero" class="mi-input">
           <option value="" disabled selected>Selecciona un género</option>
           <option value="novela" name="genero">Novela</option>
           <option value="poesia" name="genero">Poesía</option>
@@ -39,12 +39,18 @@
     
         <div class="botones">
         <button type="submit" class="mi-btn">Editar libro</button>
-        <button type="button" id="eliminar" class="mi-btn">Eliminar</button>
+        
         </div>
     </form>
+
+    <form class="mi-formulario" method="POST" action="/book-edit/<%= result.id %>?_method=DELETE">
+      <div class="botones">
+        <button type="submit" class="mi-btn" id="eliminar">Eliminar</button>
+        </div>    
+      </form>
     </div>
 
-    <%- include('./partials/footer') %>
+
 
 </body>
 </html>

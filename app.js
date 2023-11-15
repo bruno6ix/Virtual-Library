@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
 
+const methodOverride = require('method-override')
+
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
@@ -26,6 +28,8 @@ app.use((req, res, next) => {
   next();
 
 });
+
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

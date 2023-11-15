@@ -12,6 +12,7 @@ router.post('/book-create', authSession, upload.single('archivo'), mainControlle
 
 router.get('/book-edit/:id', authSession, mainController.formEdit)
 router.post('/book-edit/:id', authSession, upload.single('archivo'), mainController.bookEdit)
+router.delete('/book-edit/:id', authSession, mainController.bookDelete)
 
 router.get('/login', authRedirectSession, mainController.formLogin)
 router.post('/login', authRedirectSession, validacionesInicioSesion, resultadoInicioSesion, mainController.login);
