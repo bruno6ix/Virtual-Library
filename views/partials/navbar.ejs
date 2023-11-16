@@ -2,17 +2,17 @@
     <navbar class="navbar">
         <div class="search">
             <form action="/resultado" method="GET">
-                <input type="search" placeholder="Buscar" name="Buscar">
+                <input type="search" placeholder="Buscar" name="Buscar" required>
                 <button type="submit">Buscar</button>
             </form>
         </div>
         <div class="login">
+            <a href="/">Inicio</a>
             <% if (isLoggedIn) { %>
-                <!-- Muestra el icono de rueda dentada si el usuario está autenticado -->
-                <a href="/book-create"><i class="fas fa-cog"></i></a>
+                <a href="/book/book-create">Nuevo Libro</a>
+                <a href="/user/logout">Cerrar Sesión</a>
             <% } else { %>
-                <!-- Muestra el enlace "Iniciar sesión" si el usuario no está autenticado -->
-                <a href="/login">Iniciar sesión</a>
+                <a href="/user/login">Iniciar sesión</a>
             <% } %>
         </div>
     </navbar>

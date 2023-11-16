@@ -4,10 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
+const userRouter = require('./routes/user');
+const bookRouter = require('./routes/book');
 const { sequelize } = require('./database/models');
 
 const app = express();
@@ -28,6 +31,8 @@ app.use((req, res, next) => {
 
 });
 
+app.use(methodOverride('_method'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -43,6 +48,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/book', bookRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

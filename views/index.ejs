@@ -10,19 +10,24 @@
 
     <%- include ("./partials/navbar") %>
 
-   <main>
-    <div class="card-container">
-        <% data.forEach(book => { %>
-            <div class="card">
-                <img src="<%= book.image %>" alt="<%= book.title %>">
-                <h3><%= book.title %></h3>
-                <p><%= book.description %></p>
-                <a href="<%= book.link %>" download>Descargar PDF</a>
-                <a href="/book-detail/<%= book.id %>">Ir</a>
-            </div>
-        <% }); %>
-    </div>
-   </main>
+    <main class="main-content">
+        <div class="card-container">
+            <% data.forEach(book => { %>
+                <div class="card">
+                    <img class="card-image" src="<%= book.image %>" alt="<%= book.title %>">
+                    <div class="card-content">
+                        <h3 class="card-title"><%= book.title %></h3>
+                        <div class="card-buttons">
+                            <a href="<%= book.link %>" download class="download-btn">Descargar PDF</a>
+                            <a href="/book/book-detail/<%= book.id %>" class="details-btn">Ver detalles</a>
+                        </div>
+                        <p class="card-id">ID: <%= book.id %></p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+    
 
    <%- include ("./partials/footer") %>
 

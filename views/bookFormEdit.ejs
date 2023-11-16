@@ -13,7 +13,7 @@
 
     <div class="formulario">
     <h2 style="text-align: center;">Editar Libro</h2>
-    <form class="mi-formulario" action="/book-edit/<%= result.id %>" method="post" enctype="multipart/form-data">
+    <form class="mi-formulario" action="/book/book-edit/<%= result.id %>" method="post" enctype="multipart/form-data">
         <label for="nombre" class="mi-label">Nombre:</label>
         <input type="text" id="nombre" name="nombre" class="mi-input" value="<%= result.title %>" required>
     
@@ -24,25 +24,31 @@
         <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input" required>
 
         <label for="genero" class="mi-label">Género:</label>
-      <select id="genero" name="genero" class="mi-input" required>
-          <option value="" disabled selected>Selecciona un género</option>
-          <option value="novela" name="genero">Novela</option>
-          <option value="poesia" name="genero">Poesía</option>
-          <option value="historia" name="genero">Historia</option>
-          <option value="ciencia-ficcion" name="genero">Ciencia Ficción</option>
-          <option value="fantasia" name="genero">Fantasía</option>
-          <option value="biografia" name="genero">Biografía</option>
-          <option value="ensayo" name="genero">Ensayo</option>
-          <option value="tecnologia" name="genero">Tecnología</option>
-          <option value="ciencias-naturales" name="genero">Ciencias Naturales</option>
-      </select>
+        <select id="genero" name="genero" class="mi-input" required>
+          <option value="" disabled>Selecciona un género</option>
+          <option value="Novela" <%= result.genre === 'Novela' ? 'selected' : '' %> >Novela</option>
+          <option value="Poesia" <%= result.genre === 'Poesia' ? 'selected' : '' %> >Poesía</option>
+          <option value="Historia" <%= result.genre === 'Historia' ? 'selected' : '' %> >Historia</option>
+          <option value="Ciencia-Ficcion" <%= result.genre === 'Ciencia-Ficcion' ? 'selected' : '' %> >Ciencia Ficción</option>
+          <option value="Fantasia" <%= result.genre === 'Fantasia' ? 'selected' : '' %> >Fantasía</option>
+          <option value="Biografia" <%= result.genre === 'Biografia' ? 'selected' : '' %> >Biografía</option>
+          <option value="Ensayo" <%= result.genre === 'Ensayo' ? 'selected' : '' %> >Ensayo</option>
+          <option value="Tecnologia" <%= result.genre === 'Tecnologia' ? 'selected' : '' %> >Tecnología</option>
+          <option value="Ciencias-Naturales" <%= result.genre === 'Ciencias-Naturales' ? 'selected' : '' %> >Ciencias Naturales</option>
+        </select>
+        
+        
     
         <div class="botones">
         <button type="submit" class="mi-btn">Editar libro</button>
-        <button type="button" id="eliminar" class="mi-btn">Eliminar</button>
         </div>
     </form>
+
+  
     </div>
+    <form class="mi-formulario" method="POST" action="/book/book-edit/<%= result.id%>?_method=DELETE">
+      <button type="submit" id="eliminar" class="mi-btn">Eliminar</button>
+    </form>
 
     <%- include('./partials/footer') %>
 

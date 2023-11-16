@@ -1,48 +1,86 @@
-main {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
+.detalle-libro {
+  display: flex;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.portada-libro {
+  width: 250px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.detalle-contenido {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.detalle-contenido h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.descripcion {
+  color: #555;
+  margin-top: 10px;
+  overflow-wrap: break-word; 
+}
+
+.genero-container {
+  display: inline-block;
+  background-color: #3498db; 
+  color: #fff;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+}
+
+.card-buttons {
+  display: flex;
+  margin-top: 15px;
+}
+
+.descargar-btn {
+  display: inline-block;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.id-libro {
+  color: #888;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
   .detalle-libro {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    flex-direction: column;
   }
-  
-  .detalle-libro img {
+
+  .portada-libro {
     width: 100%;
-    border-radius: 8px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .card-buttons {
+    flex-direction: column;
+  }
+
+  .descargar-btn {
+    margin-right: 0;
     margin-bottom: 10px;
   }
-  
-  .detalle-libro h2 {
-    color: #3498db;
-  }
-  
-  .detalle-libro .descripcion {
-    margin-top: 10px;
-  }
-  
-  .detalle-libro .descargar {
-    display: block;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .detalle-libro .descargar:hover {
-    background-color: #2980b9;
-  }
-  
+}

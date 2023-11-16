@@ -13,12 +13,33 @@
 
     <main>
         <div class="detalle-libro">
-            <img src="/images/libro.jpg" alt="Portada del libro">
-            <h2><%= libroDetalle.title %></h2>
-            <p class="descripcion"><%= libroDetalle.description %></p>
-            <a href="<%= libroDetalle.link %>" download>Descargar PDF</a>
-          </div>
+            <img src="<%= libroDetalle.image %>" alt="Portada del libro" class="portada-libro">
+            <div class="detalle-contenido">
+                <h2><%= libroDetalle.title %></h2>
+                <p class="descripcion"><%= libroDetalle.description %></p>
+                <div class="genero-card">
+                    <p class="genero-titulo">Género:</p>
+                    <div class="genero-container">
+                        <p class="genero-texto"><%= libroDetalle.genre %></p>
+                    </div>
+                </div>
+                <div class="card-buttons">
+                    <a href="<%= libroDetalle.link %>" download class="descargar-btn">Descargar PDF</a>
+                    <% if (isLoggedIn) { %>
+                        <a href="/book/book-edit/<%= libroDetalle.id %>" class="descargar-btn">Editar libro</a>
+                        <% } %>
+                </div>
+                <p class="id-libro">ID: <%= libroDetalle.id %></p>
+            </div>
+
+        </div>
     </main>
+    
+    
+    
+    
+    
+    
 
     <%- include ("./partials/footer") %>
 
