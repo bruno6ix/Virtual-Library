@@ -21,7 +21,7 @@
         <textarea id="descripcion" name="descripcion" class="mi-textarea" required><%= result.title %></textarea>
     
         <label for="archivo" class="mi-label">Subir archivo PDF:</label>
-        <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input" required>
+        <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input">
 
         <label for="genero" class="mi-label">Género:</label>
         <select id="genero" name="genero" class="mi-input" required>
@@ -50,7 +50,7 @@
       <button type="submit" id="eliminar" class="mi-btn">Eliminar</button>
     </form>
 
-    <%- include('./partials/footer') %>
+
 
 </body>
 </html>

@@ -6,6 +6,8 @@ const logger = require('morgan');
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
+const methodOverride = require('method-override')
+
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
