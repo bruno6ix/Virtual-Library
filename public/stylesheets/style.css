@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #dd4f4f;
   padding: 10px;
 }
 
@@ -28,7 +28,7 @@ body {
 
 .search button {
   padding: 8px;
-  background-color: #3498db;
+  background-color: #dd4f4f;
   color: white;
   border: none;
   cursor: pointer;
@@ -38,12 +38,15 @@ body {
   color: white;
   text-decoration: none;
   padding: 8px 15px;
-  border: 1px solid #3498db;
+  border: 1px solid #c33e3e;
   border-radius: 4px;
 }
 
 .login a:hover{
-  background-color: #3498db;
+  background-color: white;
+  border-radius: 4px;
+  color: red;
+  border: 1px solid #c33e3e;
   transition: all .2s ease-in;
 }
 
@@ -118,15 +121,16 @@ body {
 }
 
 .download-btn {
-  background-color: #4caf50;
+  background-color: #dd4f4f;
 }
 
 .details-btn {
-  background-color: #3498db;
+  background-color: #dd4f4f;
 }
 
 .download-btn:hover, .details-btn:hover {
-  background-color: #45a049;
+  background-color: white;
+  color:#dd4f4f;
 }
 
 .card-id {

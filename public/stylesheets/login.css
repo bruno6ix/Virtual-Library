@@ -18,7 +18,7 @@ main {
   }
   
   .formulario-login h2 {
-    color: #3498db;
+    color: #dd4f4f;
   }
   
   .formulario-login form {
@@ -40,7 +40,7 @@ main {
   .formulario-login button {
     margin-top: 10px;
     padding: 12px;
-    background-color: #3498db;
+    background-color: #dd4f4f;
     color: #fff;
     cursor: pointer;
     border: none;
@@ -50,6 +50,6 @@ main {
   }
   
   .formulario-login button:hover {
-    background-color: #2980b9;
+    background-color: #b74545;
   }
   
