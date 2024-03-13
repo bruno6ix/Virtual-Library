@@ -97,6 +97,32 @@ const bookController = {
     } catch(err) {
       console.log(err);
     }
+  },
+  downloadPDF: async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const book = await db.Book.findByPk(id);
+
+      if (!book) {
+        return res.status(404).json({ error: 'Libro no encontrado' });
+      }
+
+      // Genera la URL de descarga adecuada utilizando la propiedad link de Cloudinary
+      const downloadUrl = book.link.replace('/upload/', '/upload/fl_attachment/');
+
+      // Establece las cabeceras de la respuesta para indicar que es un archivo PDF y establecer el nombre del archivo
+      res.set({
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename="${book.title}.pdf"`
+      });
+
+      // Redirige al navegador a la URL de descarga del archivo PDF
+      return res.redirect(downloadUrl);
+    } catch (error) {
+      console.error('Error al descargar el PDF:', error);
+      res.status(500).json({ error: 'Hubo un error al procesar la solicitud' });
+    }
   }
 };
 

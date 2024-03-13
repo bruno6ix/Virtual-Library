@@ -18,7 +18,7 @@
                     <div class="card-content">
                         <h3 class="card-title"><%= book.title %></h3>
                         <div class="card-buttons">
-                            <a href="<%= book.link %>" download class="download-btn">Descargar PDF</a>
+                            <a href="/book/book-download-pdf/<%= book.id %>" class="download-btn">Descargar PDF</a>
                             <a href="/book/book-detail/<%= book.id %>" class="details-btn">Ver detalles</a>
                         </div>
                         <p class="card-id">ID: <%= book.id %></p>

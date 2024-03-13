@@ -17,6 +17,8 @@ const upload = multer({ storage: storage });
 
 router.get('/book-create', authSession, bookController.formCreate);
 
+router.get('/book-download-pdf/:id', bookController.downloadPDF);
+
 router.post('/book-create', authSession, upload.single('archivo'), bookController.bookPush);
 
 router.get('/book-edit/:id', authSession, bookController.formEdit);
