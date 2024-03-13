@@ -13,8 +13,6 @@ const userRouter = require('./routes/user');
 const bookRouter = require('./routes/book');
 const { sequelize } = require('./database/models');
 
-const dotenv = require('dotenv')
-
 const app = express();
 
 app.use(session({
@@ -71,7 +69,7 @@ app.use(function(err, req, res, next) {
 });
 
 sequelize.sync()
-app.listen(3000 || process.env.PORT, () => {
+app.listen(4000, () => {
   console.log('Server on')
 })
 
