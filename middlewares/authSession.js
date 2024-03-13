@@ -5,7 +5,7 @@ const authRedirectSession = (req, res, next) => {
     
         return res.redirect('/');
     }
-    next(); 
+    next();
 };
 
 const authSession = (req, res, next) => {
