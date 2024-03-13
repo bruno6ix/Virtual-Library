@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="card-buttons">
-                    <a href="<%= libroDetalle.link %>" download class="descargar-btn">Descargar PDF</a>
+                    <a href="/book/book-download-pdf/<%= book.id %>" class="descargar-btn">Descargar PDF</a>
                     <% if (isLoggedIn) { %>
                         <a href="/book/book-edit/<%= libroDetalle.id %>" class="descargar-btn">Editar libro</a>
                         <% } %>
