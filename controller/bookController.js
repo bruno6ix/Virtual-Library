@@ -1,21 +1,5 @@
 const db = require('../database/models');
-const path = require('path');
-const multer = require('multer');
 const cloudinary = require('../cloudinary.js');
-const fs = require('fs');
-const axios = require('axios');
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, '/home/')); 
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
-    cb(null, 'Z1-' + uniqueSuffix + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage: storage });
 
 const bookController = {
   formCreate: (req, res) => {
@@ -113,31 +97,7 @@ const bookController = {
     } catch(err) {
       console.log(err);
     }
-  },
-
-  downloadPDF: async (req, res) => {
-    const { id } = req.params;
-
-    try {
-      const book = await db.Book.findByPk(id);
-
-      if (!book) {
-        return res.status(404).json({ error: 'Libro no encontrado' });
-      }
-
-      const response = await axios.get(book.link, { responseType: 'stream' });
-
-      res.set({
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="${book.title}.pdf"`
-      });
-
-      response.data.pipe(res);
-    } catch (error) {
-      console.error('Error al descargar el PDF:', error);
-      res.status(500).json({ error: 'Hubo un error al procesar la solicitud' });
-    }
   }
 };
 
-module.exports = { bookController, upload };
+module.exports = bookController;
