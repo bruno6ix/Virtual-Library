@@ -13,6 +13,8 @@ const userRouter = require('./routes/user');
 const bookRouter = require('./routes/book');
 const { sequelize } = require('./database/models');
 
+const dotenv = require('dotenv')
+
 const app = express();
 
 app.use(session({
