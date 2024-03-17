@@ -10,10 +10,27 @@
 
     <%- include ("./partials/navbar") %>
 
+    <div class="genre-filter">
+        <h3>Géneros</h3>
+        <ul>
+            <li data-genre="Historia"><i class="fa-solid fa-book"></i><a>Historia</a></li>
+            <li data-genre="Ciencias"><i class="fa-solid fa-book"></i><a>Ciencias</a></li>
+            <li data-genre="Matematica"><i class="fa-solid fa-book"></i><a>Matematica</a></li>
+            <li data-genre="Ensayo"><i class="fa-solid fa-book"></i><a>Ensayo</a></li>
+            <li data-genre="Biografía"><i class="fa-solid fa-book"></i><a>Biografía</a></li>
+            <li data-genre="Documentación"><i class="fa-solid fa-book"></i><a>Documentación</a></li>
+            <li data-genre="Informática"><i class="fa-solid fa-book"></i><a>Informática</a></li>
+            <li data-genre="Novela"><i class="fa-solid fa-book"></i><a>Novela</a></li>
+            <li data-genre="Poesía"><i class="fa-solid fa-book"></i><a>Poesía</a></li>
+            <li data-genre="Literatura"><i class="fa-solid fa-book"></i><a>Literatura</a></li>
+            <li data-genre="todos"><i class="fa-solid fa-book"></i><a>Todos</a></li>
+        </ul>
+    </div>
+
     <main class="main-content">
-        <div class="card-container">
+        <div class="card-container" id="book-list">
             <% data.forEach(book => { %>
-                <div class="card">
+                <div class="card" data-genre="<%= book.genre %>">
                     <img class="card-image" src="<%= book.image %>" alt="<%= book.title %>">
                     <div class="card-content">
                         <h3 class="card-title"><%= book.title %></h3>
@@ -21,16 +38,11 @@
                             <a href="/book/book-download-pdf/<%= book.id %>" class="download-btn">Descargar PDF</a>
                             <a href="/book/book-detail/<%= book.id %>" class="details-btn">Ver detalles</a>
                         </div>
-                        <p class="card-id">ID: <%= book.id %></p>
+                        <p class="card-id">ID: 00<%= book.id %></p>
                     </div>
                 </div>
             <% }); %>
         </div>
     </main>
-    
 
-   <%- include ("./partials/footer") %>
-
-
-</body>
-</html>
+    <%- include ("./partials/footer") %>

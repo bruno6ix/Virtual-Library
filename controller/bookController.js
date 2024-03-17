@@ -23,7 +23,7 @@ const bookController = {
         description: descripcion,
         link: result.secure_url,
         genre: genero,
-        image: '/images/libro.jpg'
+        image: '/images/portada.jpg'
       });
 
       res.redirect('/');
@@ -66,7 +66,7 @@ const bookController = {
         description: descripcion,
         link: result.secure_url,
         genre: genero,
-        image: '/images/libro.jpg'
+        image: '/images/portada.jpg'
       },
       {
         where:{id}
@@ -108,16 +108,13 @@ const bookController = {
         return res.status(404).json({ error: 'Libro no encontrado' });
       }
 
-      // Genera la URL de descarga adecuada utilizando la propiedad link de Cloudinary
       const downloadUrl = book.link.replace('/upload/', '/upload/fl_attachment/');
 
-      // Establece las cabeceras de la respuesta para indicar que es un archivo PDF y establecer el nombre del archivo
       res.set({
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${book.title}.pdf"`
       });
 
-      // Redirige al navegador a la URL de descarga del archivo PDF
       return res.redirect(downloadUrl);
     } catch (error) {
       console.error('Error al descargar el PDF:', error);

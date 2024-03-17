@@ -18,18 +18,18 @@
                 <h2><%= libroDetalle.title %></h2>
                 <p class="descripcion"><%= libroDetalle.description %></p>
                 <div class="genero-card">
-                    <p class="genero-titulo">Género:</p>
+                    <h3 class="genero-titulo">Géneros:</h3>
                     <div class="genero-container">
                         <p class="genero-texto"><%= libroDetalle.genre %></p>
                     </div>
                 </div>
+                <p class="id-libro">ID: 00<%= libroDetalle.id %></p>
                 <div class="card-buttons">
                     <a href="/book/book-download-pdf/<%= libroDetalle.id %>" class="descargar-btn">Descargar PDF</a>
                     <% if (isLoggedIn) { %>
                         <a href="/book/book-edit/<%= libroDetalle.id %>" class="descargar-btn">Editar libro</a>
                         <% } %>
                 </div>
-                <p class="id-libro">ID: <%= libroDetalle.id %></p>
             </div>
 
         </div>

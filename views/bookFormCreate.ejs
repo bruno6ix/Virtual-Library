@@ -9,43 +9,40 @@
 </head>
 <body>
 
-    <%- include ("./partials/navbar") %>
+  <%- include ("./partials/navbar") %>
 
-    <div class="formulario">
-    <h2 style="text-align: center;">Subir Libro</h2>
-    <form class="mi-formulario" action="/book/book-create" method="post" enctype="multipart/form-data">
-      <label for="nombre" class="mi-label">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" class="mi-input" required>
-  
-      <label for="descripcion" class="mi-label">Descripción:</label>
-      <textarea id="descripcion" name="descripcion" class="mi-textarea" required></textarea>
-  
-      <label for="archivo" class="mi-label">Subir archivo PDF:</label>
-      <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input" required>
-  
-      <label for="genero" class="mi-label">Género:</label>
-      <select id="genero" name="genero" class="mi-input" required>
-          <option value="" disabled selected>Selecciona un género</option>
-          <option value="Novela" name="genero">Novela</option>
-          <option value="Poesia" name="genero">Poesía</option>
-          <option value="Historia" name="genero">Historia</option>
-          <option value="Ciencia-Ficcion" name="genero">Ciencia Ficción</option>
-          <option value="Fantasia" name="genero">Fantasía</option>
-          <option value="Biografia" name="genero">Biografía</option>
-          <option value="Ensayo" name="genero">Ensayo</option>
-          <option value="Tecnologia" name="genero">Tecnología</option>
-          <option value="Ciencias-Naturales" name="genero">Ciencias Naturales</option>
-      </select>
-  
-      <div class="botones">
-          <button type="submit" class="mi-btn">Subir libro</button>
-          <button type="button" id="eliminar" class="mi-btn">Eliminar</button>
-      </div>
-  </form>
-  
-    </div>
+  <div class="formulario" style="margin-top: 50px;"> <!-- Añadimos el margen superior directamente aquí -->
+      <h2>Subir nuevo libro</h2>
+      <form class="mi-formulario" action="/book/book-create" method="post" enctype="multipart/form-data">
+          <input type="text" id="nombre" name="nombre" class="mi-input" placeholder="Nombre">
 
-    <%- include ("./partials/footer") %>
+          <textarea id="descripcion" name="descripcion" class="mi-textarea" required placeholder="Descripción"></textarea>
+
+          <input type="file" id="archivo" name="archivo" accept=".pdf" class="mi-input" required>
+
+          <select id="genero" name="genero" class="mi-input" required>
+              <option value="" disabled selected>Selecciona un género</option>
+              <option value="Historia">Historia</option>
+              <option value="Ciencias">Ciencias</option>
+              <option value="Matematica">Matematica</option>
+              <option value="Ensayo">Ensayo</option>
+              <option value="Biografía">Biografía</option>
+              <option value="Documentación">Documentación</option>
+              <option value="Informática">Informática</option>
+              <option value="Novela">Novela</option>
+              <option value="Poesia">Poesia</option>
+              <option value="Literatura">Literatura</option>
+              <option value="Otros">Otros</option>
+          </select>
+
+          <div class="botones">
+              <button type="submit" class="mi-btn">Subir libro</button>
+              <button type="button" id="eliminar" class="mi-btn">Eliminar</button>
+          </div>
+      </form>
+  </div>
+
+  <%- include ("./partials/footer") %>
 
 </body>
 </html>

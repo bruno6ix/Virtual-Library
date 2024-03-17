@@ -1,45 +1,72 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: auto;
+}
+
+.formulario {
+  width: 50%;
+  margin: 50px auto 0;
+  padding: 20px;
+  background-color: #181b28;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid #0b9978;
+}
+
+.formulario h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mi-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.mi-input,
+.mi-textarea,
+.mi-btn {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid #0b9978;
+  background-color: #22252f;
+  color: white;
+}
+
+.mi-input:focus,
+.mi-textarea:focus {
+  outline: none;
+  border-color: #3b9187;
+}
+
+.mi-btn {
+  background-color: #3b9187;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.mi-btn:hover {
+  background-color: #0b9978;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .formulario {
+    width: 80%;
   }
-  
-  .mi-formulario {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 480px) {
+  .formulario {
+    width: 90%;
   }
-  
-  .mi-label {
-    margin-top: 6px;
-  }
-  
-  .mi-input,
-  .mi-textarea,
-  .mi-btn {
-    margin-top: 6px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-  }
-  
-  .mi-input[type="file"] {
-    margin-top: 8px;
-  }
-  
-  .mi-btn {
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .mi-btn#eliminar {
-    background-color: #e74c3c;
-  }
-  
-  .mi-btn:hover {
-    background-color: #2980b9;
-  }
-  
+}

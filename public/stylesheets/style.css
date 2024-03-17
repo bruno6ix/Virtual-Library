@@ -1,18 +1,26 @@
 body {
+  background-color: #22252f;
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-.main-content {
-  margin-bottom: 60px;
-}
-
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #dd4f4f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #181b28;
   padding: 10px;
+}
+
+.main-content {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 300px;
 }
 
 .search {
@@ -21,32 +29,46 @@ body {
   margin: 0 auto;
 }
 
+.form-search-navbar {
+  background-color: #22252f;
+  border-radius: 10px;
+}
+
 .search input {
-  padding: 8px;
+  color: white;
+  padding: 10px;
+  width: 230px;
   margin-right: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: #3b9187;
+  background-color: #22252f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search button {
-  padding: 8px;
-  background-color: #dd4f4f;
-  color: white;
+  background-color: #3b9187;
+  border-radius: 10px;
+  margin: 5px;
+  height: 25px;
   border: none;
+  color: white;
   cursor: pointer;
+}
+
+.navbar a {
+  padding: 10px;
+  margin: 20px;
 }
 
 .login a {
   color: white;
   text-decoration: none;
-  padding: 8px 15px;
-  border: 1px solid #c33e3e;
-  border-radius: 4px;
 }
 
 .login a:hover{
-  background-color: white;
   border-radius: 4px;
-  color: red;
-  border: 1px solid #c33e3e;
+  color: #0b9978;
   transition: all .2s ease-in;
 }
 
@@ -57,10 +79,10 @@ body {
 }
 
 .card {
-  width: 300px;
+  background-color: #181b28;
+  width: 250px;
   margin: 20px;
   padding: 15px;
-  border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -72,12 +94,10 @@ body {
   text-decoration: none;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
 .card-image {
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
+  height: 20%;
   height: auto;
   border-radius: 8px;
 }
@@ -89,9 +109,10 @@ body {
 }
 
 .card-title {
+  text-align: center;
   font-size: 1.2em;
   margin-bottom: 10px;
-  color: #333;
+  color: white;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -111,29 +132,78 @@ body {
 }
 
 .download-btn, .details-btn {
-  display: inline-block;
-  padding: 8px 12px;
-  margin-right: 10px;
-  text-decoration: none;
+  font-size: 14px;
+  padding: 5px;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 .download-btn {
-  background-color: #dd4f4f;
+  background-color: #22252f;
 }
 
 .details-btn {
-  background-color: #dd4f4f;
+  background-color: #22252f;
 }
 
 .download-btn:hover, .details-btn:hover {
-  background-color: white;
-  color:#dd4f4f;
+  background-color: #0b9978;
+  color:white;
 }
 
 .card-id {
   color: #888;
   margin-top: 10px;
+}
+
+.genre-filter {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  background-color: #181b28;
+  text-decoration: none;
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.genre-filter h3 {
+  margin-top: 50px;
+}
+.genre-filter ul {
+  color: white;
+  list-style-type: none;
+  padding: 0;
+}
+.genre-filter li {
+  margin-bottom: 10px;
+}
+
+.genre-filter ul li {
+  padding: 10px;
+}
+
+.genre-filter ul li a {
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.genre-filter a:hover {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #0b9978;
+  transition: all 0.3s;
+  text-decoration: 2px underline #0b9978;
+  padding: 3px;
+}
+
+.genre-filter ul li i {
+  color: #0b9978;
 }

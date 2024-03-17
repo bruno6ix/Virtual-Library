@@ -1,18 +1,18 @@
 <header>
     <navbar class="navbar">
         <div class="search">
-            <form action="/resultado" method="GET">
+            <form action="/resultado" method="GET" class="form-search-navbar">
                 <input type="search" placeholder="Buscar" name="Buscar" required>
-                <button type="submit">Buscar</button>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
         <div class="login">
-            <a href="/">Inicio</a>
+            <a href="/"><i class="fa-solid fa-house"></i></a>
             <% if (isLoggedIn) { %>
-                <a href="/book/book-create">Nuevo Libro</a>
-                <a href="/user/logout">Cerrar Sesión</a>
+                <a href="/book/book-create"><i class="fa-solid fa-file-pdf"></i></a>
+                <a href="/user/logout"><i class="fa-solid fa-right-from-bracket"></i></a>
             <% } else { %>
-                <a href="/user/login">Iniciar sesión</a>
+                <a href="/user/login"><i class="fa-solid fa-user"></i></a>
             <% } %>
         </div>
     </navbar>

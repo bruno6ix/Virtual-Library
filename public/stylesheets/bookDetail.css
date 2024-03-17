@@ -1,10 +1,10 @@
 .detalle-libro {
   display: flex;
   max-width: 800px;
-  margin: 20px auto;
+  margin: 100px auto;
   text-align: left;
-  background-color: #fff;
   border-radius: 10px;
+  border: 4px solid #181b28;  ;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -14,6 +14,8 @@
   border-radius: 5px;
   margin-right: 20px;
   flex-shrink: 0;
+  padding: 30px;
+  background-color: #181b28;
 }
 
 .detalle-contenido {
@@ -21,53 +23,57 @@
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
+  background-color:transparent;
 }
 
 .detalle-contenido h2 {
-  font-size: 1.2em;
+  text-align: center;
+  font-size: 1.90em;
   margin-bottom: 10px;
-  color: #333;
+  color: #0b9978;
 }
 
 .descripcion {
-  color: #555;
+  color: white;
   margin-top: 10px;
   overflow-wrap: break-word; 
 }
 
 .genero-container {
   display: inline-block;
-  background-color: #dd4f4f; 
   color: #fff;
+}
+
+.genero-titulo {
+  color: #0b9978;
+}
+
+.genero-texto {
+  background-color: #0b9978 ;
   border-radius: 10px;
-  width: auto;
-  height: auto;
+  padding: 5px;
 }
 
 .card-buttons {
   display: flex;
-  margin-top: 15px;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
 .descargar-btn {
   display: inline-block;
   padding: 10px;
-  background-color: #dd4f4f;
+  background-color: #0b9978 ;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   margin-right: 10px;
 }
 
-.descargar-btn:hover {
-  background-color: white;
-  color: #dd4f4f;
-  border: 1px solid #dd4f4f;
-  transition: all .2s ease-in;
-}
-
 .id-libro {
-  color: #888;
+  color: #0b9978;
+  font-weight: 800;
   margin-top: 15px;
 }
 
