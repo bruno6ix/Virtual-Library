@@ -15,5 +15,58 @@
                 <a href="/user/login"><i class="fa-solid fa-user"></i></a>
             <% } %>
         </div>
+
+        <div class="burguer-menu">
+            <nav class="navbar navbar-dark bg-dark fixed-top">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                      <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Desplegable</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <% if (isLoggedIn) { %>
+                                <a class="nav-link" href="/book/book-create">Crear libro</i></a>
+                                <a class="nav-link" href="/user/logout">Cerrar sesión</i></a>
+                            <% } else { %>
+                                <a class="nav-link" href="/user/login">Iniciar Sesión</i></a>
+                            <% } %>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Géneros
+                          </a>
+                          <ul class="dropdown-menu dropdown-menu-dark">
+                            <li data-genre="Historia"><i class="fa-solid fa-book"></i><a href="#">Historia</a></li>
+                            <li data-genre="Ciencias"><i class="fa-solid fa-book"></i><a href="#">Ciencias</a></li>
+                            <li data-genre="Matematica"><i class="fa-solid fa-book"></i><a href="#">Matematica</a></li>
+                            <li data-genre="Ensayo"><i class="fa-solid fa-book"></i><a href="#">Ensayo</a></li>
+                            <li data-genre="Biografía"><i class="fa-solid fa-book"></i><a href="#">Biografía</a></li>
+                            <li data-genre="Documentación"><i class="fa-solid fa-book"></i><a href="#">Documentación</a></li>
+                            <li data-genre="Informática"><i class="fa-solid fa-book"></i><a href="#">Informática</a></li>
+                            <li data-genre="Novela"><i class="fa-solid fa-book"></i><a href="#">Novela</a></li>
+                            <li data-genre="Poesía"><i class="fa-solid fa-book"></i><a href="#">Poesía</a></li>
+                            <li data-genre="Literatura"><i class="fa-solid fa-book"></i><a href="#">Literatura</a></li>
+                            <li data-genre="todos"><i class="fa-solid fa-book"></i><a href="#">Todos</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Filtrar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
     </navbar>
 </header>

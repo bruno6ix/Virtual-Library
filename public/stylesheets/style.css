@@ -4,17 +4,20 @@ body {
   font-family: Arial, sans-serif;
 }
 
+main {
+  background-color: #22252f;
+}
+
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
   background-color: #181b28;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .main-content {
@@ -206,4 +209,40 @@ body {
 
 .genre-filter ul li i {
   color: #0b9978;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu-content {
+  display: none;
+}
+
+.burguer-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container-fluid {
+    background-color: #181b28;
+  }
+  
+  .genre-filter {
+    display: none;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .burguer-menu {
+    display: block;
+  }
+
 }
