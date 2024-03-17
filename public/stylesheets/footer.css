@@ -11,13 +11,3 @@ footer {
 footer p {
     margin: 0;
 }
-
-
-@media only screen and (max-width: 768px) {
-
-    footer {
-        position: fixed;
-        z-index: 1000;
-    }
-
-}
