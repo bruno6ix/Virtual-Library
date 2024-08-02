@@ -69,7 +69,7 @@ app.use(function(err, req, res, next) {
 });
 
 sequelize.sync()
-app.listen(3306, () => {
+app.listen(4000, () => {
   console.log('Server on')
 })
 

@@ -4,7 +4,7 @@ module.exports = {
     password: 'GUzKNljaODMGAKTEwfYgdiTraHPOjveb',
     database: 'railway',
     host: 'roundhouse.proxy.rlwy.net',
-    port: '3306',
+    port: '20846',
     dialect: 'mysql',
   },
   test: {
@@ -12,7 +12,7 @@ module.exports = {
     password: 'GUzKNljaODMGAKTEwfYgdiTraHPOjveb',
     database: 'railway',
     host: 'roundhouse.proxy.rlwy.net',
-    port: '3306',
+    port: '20846',
     dialect: 'mysql',
   },
   production: {
@@ -20,7 +20,7 @@ module.exports = {
     password: 'GUzKNljaODMGAKTEwfYgdiTraHPOjveb',
     database: 'railway',
     host: 'roundhouse.proxy.rlwy.net',
-    port: '3306',
+    port: '20846',
     dialect: 'mysql',
   }
 };
