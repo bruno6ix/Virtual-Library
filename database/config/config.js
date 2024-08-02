@@ -1,26 +1,26 @@
 module.exports = {
   development: {
     username: 'root',
-    password: 'OoczcZRVanNKprQwPdnsYqqQGOJzaBqj',
+    password: 'PhcKnFsXJCVftgTiWJomNjHnpPntwZYv',
     database: 'railway',
-    host: 'monorail.proxy.rlwy.net',
-    port: '35414',
+    host: 'roundhouse.proxy.rlwy.net',
+    port: '45808',
     dialect: 'mysql',
   },
   test: {
     username: 'root',
-    password: 'OoczcZRVanNKprQwPdnsYqqQGOJzaBqj',
+    password: 'PhcKnFsXJCVftgTiWJomNjHnpPntwZYv',
     database: 'railway',
-    host: 'monorail.proxy.rlwy.net',
-    port: '35414',
+    host: 'roundhouse.proxy.rlwy.net',
+    port: '45808',
     dialect: 'mysql',
   },
   production: {
-    username: 'root',
-    password: 'OoczcZRVanNKprQwPdnsYqqQGOJzaBqj',
+    username: 'rooot',
+    password: 'PhcKnFsXJCVftgTiWJomNjHnpPntwZYv',
     database: 'railway',
-    host: 'monorail.proxy.rlwy.net',
-    port: '35414',
+    host: 'roundhouse.proxy.rlwy.net',
+    port: '45808',
     dialect: 'mysql',
   }
 };
