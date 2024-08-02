@@ -9,8 +9,8 @@ const env = 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
 
-const sequelize = new Sequelize('railway', 'root','PhcKnFsXJCVftgTiWJomNjHnpPntwZYv', {
-  port: '45808',
+const sequelize = new Sequelize('railway', 'root','MbUJZojICetmKWlRpTQzJQPFTdCrmKqk', {
+  port: '27424',
   host: 'roundhouse.proxy.rlwy.net',
   dialect: 'mysql',
 });
